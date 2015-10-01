@@ -1,0 +1,46 @@
+<zk>
+	<style src="../public/Estilo.css" />
+	<div id="divVConcepto" apply="controlador.maestros.CConcepto"
+		width="100%">
+		<groupbox width="100%" mold="3d" title="Conceptos (VConcepto)">
+			<div id="botoneraConcepto" />
+			<separator />
+			<groupbox id="gpxRegistro" width="auto" class="azul" title=""
+				open="false">
+				<caption label="Añadir" style="font-weight:bold; font-size: 13px"
+					tooltiptext="Presione para Registrar un Nuevo Concepto" />
+				<separator />
+				<grid width="100%">
+					<columns visible="false">
+						<column label="" width="20%" />
+						<column label="" width="10%" />
+						<column label="" width="25%" />
+						<column label="" width="45%" />
+					</columns>
+					<rows>
+						<row>
+							<hbox>
+								<label class="etiqueta" value="Descripcion:" />
+								<space />
+								<label value="*" style="font-weight:bold;color:red">
+								</label>
+							</hbox>
+							<cell colspan="3">
+								<textbox id="txtDescripcion" hflex="1" maxlength="100"
+									multiline="true" class="multilinea" tooltiptext="Ingrese la descripcion del Concepto" />
+							</cell>
+						</row>
+					</rows>
+				</grid>
+			</groupbox>
+			<separator />
+			<groupbox id="gpxDatos" class="azul" width="auto">
+				<caption label="Registros" style="font-weight:bold; font-size: 13px;"
+					tooltiptext="Presione para Visualizar los Conceptos Registrados" />
+				<div id="catalogoConcepto" tooltiptext="Seleccione el Concepto para Realizar una Accion" />
+			</groupbox>
+			<separator />
+			<separator />
+		</groupbox>
+	</div>
+</zk>

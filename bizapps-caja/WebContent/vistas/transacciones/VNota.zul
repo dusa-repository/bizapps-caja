@@ -1,0 +1,223 @@
+<zk>
+	<style src="../public/Estilo.css" />
+	<div id="divVNota" apply="controlador.transacciones.CNota" width="100%">
+		<groupbox width="100%" mold="3d" title="Notas(Credito y Debito) (VNota)">
+			<div id="botoneraNota" />
+			<separator />
+			<groupbox id="gpxRegistro" width="auto" class="azul" title=""
+				open="false">
+				<caption label="Añadir" style="font-weight:bold; font-size: 13px"
+					tooltiptext="Presione para Registrar una Nueva Nota" />
+				<groupbox class="blanco" title="" closable="false">
+					<caption label="Datos de la Empresa" style="font-weight:bold; font-size: 12px" />
+					<grid>
+						<columns visible="false">
+							<column label="" width="25%" />
+							<column label="" width="25%" />
+							<column label="" width="25%" />
+							<column label="" width="25%" />
+						</columns>
+						<rows>
+							<row>
+								<cell colspan="2">
+									<label style="font-weight:bold;color:blue" id="lblNombre" />
+								</cell>
+								<cell colspan="2">
+									<label style="font-weight:bold;color:blue" id="lblDireccion" />
+								</cell>
+							</row>
+							<row>
+								<cell colspan="2">
+									<label style="font-weight:bold;color:blue" id="lblTelefono" />
+								</cell>
+								<cell colspan="2">
+									<label style="font-weight:bold;color:blue" id="lblRif" />
+								</cell>
+							</row>
+							<row>
+								<cell colspan="2">
+									<label style="font-weight:bold;color:blue" id="lblFax" />
+								</cell>
+								<cell colspan="2">
+									<label style="font-weight:bold;color:blue" id="lblNit" />
+								</cell>
+							</row>
+						</rows>
+					</grid>
+				</groupbox>
+				<groupbox class="blanco" title="" closable="false">
+					<caption label="Datos de la Nota" style="font-weight:bold; font-size: 12px" />
+					<grid width="100%">
+						<columns visible="false">
+							<column label="" width="12.5%" />
+							<column label="" width="12.5%" />
+							<column label="" width="12.5%" />
+							<column label="" width="12.5%" />
+							<column label="" width="12.5%" />
+							<column label="" width="12.5%" />
+							<column label="" width="12.5%" />
+							<column label="" width="12.5%" />
+						</columns>
+						<rows>
+							<row>
+								<hbox>
+									<label class="etiqueta" value="Nro Nota:" />
+									<space />
+									<label value="" style="font-weight:bold;color:red">
+									</label>
+								</hbox>
+								<intbox id="txtNumero" hflex="1" readonly="true" />
+								<hbox>
+									<label class="etiqueta" value="Fecha Nota:" />
+									<space />
+									<label value="" style="font-weight:bold;color:red">
+									</label>
+								</hbox>
+								<datebox disabled="true" readonly="true" width="100%"
+									id="dtbFecha" onCreate="self.value = new Date()" />
+								<hbox>
+									<label class="etiqueta" value="Hora Nota:" />
+									<space />
+									<label value="" style="font-weight:bold;color:red">
+									</label>
+								</hbox>
+								<timebox disabled="true" format="short"
+									onCreate="self.value = new Date()" />
+								<hbox />
+								<hbox />
+							</row>
+							<row>
+								<hbox>
+									<label class="etiqueta" value="Proveedor:" />
+									<space />
+									<label value="*" style="font-weight:bold;color:red">
+									</label>
+								</hbox>
+								<intbox disabled="true" id="txtProveedor" width="100%"
+									tooltiptext="Seleccione del Catalogo el Proveedor" />
+								<button id="btnBuscarProveedor" label="Buscar"
+									tooltiptext="Catalogo de Proveedores" image="/public/imagenes/botones/buscar.png"
+									class="btn" autodisable="self" />
+								<label id="lblProveedor" />
+								<cell colspan="4">
+									<div id="divBuscadorTipo" />
+								</cell>
+							</row>
+							<row>
+								<cell colspan="4">
+									<div id="divBuscadorClase" />
+								</cell>
+
+								<cell colspan="4">
+									<div id="divBuscadorMoneda" />
+								</cell>
+							</row>
+							<row>
+								<label class="etiqueta" value="Elaborado:" />
+								<label style="font-weight:bold;color:blue" id="lblElaborado" />
+								<label class="etiqueta" value="Revisado:" />
+								<label style="font-weight:bold;color:blue" id="lblRevisado" />
+								<label class="etiqueta" value="Autorizado:" />
+								<label style="font-weight:bold;color:blue" id="lblAutorizado" />
+								<hbox />
+								<hbox />
+							</row>
+						</rows>
+					</grid>
+				</groupbox>
+				<div width="100%">
+					<groupbox id="gpxItems" class="blanco" title="" closable="false">
+						<caption label="Detalles de la Nota" style="font-weight:bold; font-size: 12px" />
+						<grid>
+							<columns visible="false">
+								<column label="" width="20%" />
+								<column label="" width="20%" />
+								<column label="" width="20%" />
+								<column label="" width="20%" />
+								<column label="" width="20%" />
+							</columns>
+							<rows>
+								<row>
+									<hbox>
+										<label class="etiqueta" value="Referencia:" />
+										<space />
+										<label value="**" style="font-weight:bold;color:red">
+										</label>
+									</hbox>
+									<textbox id="txtReferencia" hflex="1" maxlength="20"
+										tooltiptext="Ingrese la referencia del Concepto" />
+									<hbox>
+										<label class="etiqueta" value="Importe:" />
+										<space />
+										<label value="**" style="font-weight:bold;color:red">
+										</label>
+									</hbox>
+									<doublespinner id="spnImporte" hflex="1" value="0"
+										constraint="min 0" tooltiptext="Ingrese el importe del Concepto" />
+									<button label="Agregar" id="btnAgregar" autodisable="self"
+										image="/public/imagenes/botones/annadir.png" class="btn"
+										tooltiptext="Presione para Agregar un Item" />
+								</row>
+								<row>
+									<hbox>
+										<label class="etiqueta" value="Concepto:" />
+										<space />
+										<label value="**" style="font-weight:bold;color:red">
+										</label>
+									</hbox>
+									<cell colspan="2">
+										<textbox id="txtConcepto" hflex="1" maxlength="50"
+											tooltiptext="Ingrese la Descripcion del Concepto" />
+									</cell>
+									<hbox>
+										<label class="etiqueta" value="Total:" />
+										<space />
+										<label value="**" style="font-weight:bold;color:red">
+										</label>
+									</hbox>
+									<doublebox readonly="true" id="txtTotal" hflex="1"
+										tooltiptext="Impuesto total" />
+								</row>
+							</rows>
+						</grid>
+						<div>
+							<hbox widths="95%,5%">
+								<listbox id="ltbPedidos" span="true" mold="paging"
+									pageSize="5" rows="5" width="100%">
+									<listhead>
+										<listheader label="Referencia" hflex="min" />
+										<listheader label="Concepto" hflex="min" />
+										<listheader label="Importe" hflex="min" />
+									</listhead>
+									<template name="model">
+										<listitem>
+											<listcell label="${each.refNot}" />
+											<listcell label="${each.conNot}" />
+											<listcell label="${each.impNot}" />
+										</listitem>
+									</template>
+								</listbox>
+								<vbox width="100%">
+									<button label="Editar" class="btn" id="btnVer"
+										autodisable="self" image="/public/imagenes/botones/generar.png"
+										tooltiptext="Presione para Editar un Item" />
+									<button label="Remover" class="btn" id="btnRemover"
+										autodisable="self" image="/public/imagenes/botones/anular.png"
+										tooltiptext="Presione para Remover un Item" />
+								</vbox>
+							</hbox>
+						</div>
+					</groupbox>
+				</div>
+			</groupbox>
+			<groupbox id="gpxDatos" class="azul" width="auto">
+				<caption label="Registros" style="font-weight:bold; font-size: 13px;"
+					tooltiptext="Presione para Visualizar las Notas Registradas" />
+				<div id="catalogoNota" tooltiptext="Seleccione la Nota Realizar una Accion" />
+			</groupbox>
+			<separator />
+			<separator />
+		</groupbox>
+		<div id="divCatalogoProveedor" tooltiptext="Click para Seleccionar un Proveedor" />
+	</div>
+</zk>

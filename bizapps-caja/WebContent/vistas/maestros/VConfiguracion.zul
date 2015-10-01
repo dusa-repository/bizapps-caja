@@ -1,0 +1,58 @@
+<zk>
+	<style src="/public/Estilo.css" />
+	<div apply="controlador.maestros.CConfiguracion" id="divConfiguracion">
+		<groupbox width="100%" mold="3d" title="Configuracion (VConfiguracion)">
+			<div id="botoneraConfiguracion" />
+			<separator />
+			<grid width="100%">
+				<columns visible="false">
+					<column label="" width="25%" />
+					<column label="" width="25%" />
+					<column label="" width="25%" />
+					<column label="" width="25%" />
+				</columns>
+				<rows>
+					<row>
+						<hbox>
+							<label class="etiqueta" value="Empresa:" />
+							<space />
+							<label value="*" style="font-weight:bold;color:red">
+							</label>
+						</hbox>
+						<intbox disabled="true" id="txtEmpresa"
+							tooltiptext="Seleccione del Catalogo el Codigo de la Empresa" />
+						<button id="btnBuscarEmpresa" label="Buscar"
+							tooltiptext="Catalogo de Codigos de Empresas" image="/public/imagenes/botones/buscar.png"
+							class="btn" autodisable="self" />
+						<label id="lblEmpresa" />
+					</row>
+					<row>
+						<hbox>
+							<label class="etiqueta" value="Quien Autoriza:" />
+							<space />
+							<label value="*" style="font-weight:bold;color:red">
+							</label>
+						</hbox>
+						<cell colspan="3">
+							<textbox id="txtAutoriza" hflex="1" maxlength="50"
+								tooltiptext="Ingrese la persona responsable de autorizar" />
+						</cell>
+					</row>
+					<row>
+						<hbox>
+							<label class="etiqueta" value="Quien Revisa:" />
+							<space />
+							<label value="*" style="font-weight:bold;color:red">
+							</label>
+						</hbox>
+						<cell colspan="3">
+							<textbox id="txtRevisa" hflex="1" maxlength="50"
+								tooltiptext="Ingrese la persona responsable de revisar" />
+						</cell>
+					</row>
+				</rows>
+			</grid>
+		</groupbox>
+		<div id="divCatalogoEmpresa" tooltiptext="Click para Seleccionar un Aliado" />
+	</div>
+</zk>

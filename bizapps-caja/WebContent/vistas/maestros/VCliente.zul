@@ -1,0 +1,45 @@
+<zk>
+	<style src="../public/Estilo.css" />
+	<div id="divVCliente" apply="controlador.maestros.CCliente" width="100%">
+		<groupbox width="100%" mold="3d" title="Clientes (VCliente)">
+			<div id="botoneraCliente" />
+			<separator />
+			<groupbox id="gpxRegistro" width="auto" class="azul" title=""
+				open="false">
+				<caption label="Añadir" style="font-weight:bold; font-size: 13px"
+					tooltiptext="Presione para Registrar un Nuevo Cliente" />
+				<separator />
+				<grid width="100%">
+					<columns visible="false">
+						<column label="" width="20%" />
+						<column label="" width="10%" />
+						<column label="" width="25%" />
+						<column label="" width="45%" />
+					</columns>
+					<rows>
+						<row>
+							<hbox>
+								<label class="etiqueta" value="Descripcion:" />
+								<space />
+								<label value="*" style="font-weight:bold;color:red">
+								</label>
+							</hbox>
+							<cell colspan="3">
+								<textbox id="txtDescripcion" hflex="1" maxlength="100"
+									multiline="true" class="multilinea" tooltiptext="Ingrese la descripcion del Cliente" />
+							</cell>
+						</row>
+					</rows>
+				</grid>
+			</groupbox>
+			<separator />
+			<groupbox id="gpxDatos" class="azul" width="auto">
+				<caption label="Registros" style="font-weight:bold; font-size: 13px;"
+					tooltiptext="Presione para Visualizar los Clientes Registrados" />
+				<div id="catalogoCliente" tooltiptext="Seleccione el Cliente para Realizar una Accion" />
+			</groupbox>
+			<separator />
+			<separator />
+		</groupbox>
+	</div>
+</zk>
