@@ -1,0 +1,73 @@
+<zk>
+	<style src="../public/Estilo.css" />
+	<div id="divVReporteRecibo" apply="controlador.reporte.CReporteRecibo">
+		<groupbox id="grxCabecera" width="80%" mold="3d" title="">
+			<div id="botoneraReporteRecibo" />
+			<separator />
+			<grid width="100%">
+				<columns>
+					<column label="" width="25%" />
+					<column label="" width="25%" />
+					<column label="" width="25%" />
+					<column label="" width="25%" />
+				</columns>
+				<rows>
+					<row>
+						<label class="etiqueta" value="Desde:" />
+						<datebox readonly="true" width="100%" id="dtbDesde"
+							onCreate="self.value = new Date()" tooltiptext="Ingrese la Fecha de la Operacion" />
+						<label class="etiqueta" value="Hasta:" />
+						<datebox readonly="true" width="100%" id="dtbHasta"
+							onCreate="self.value = new Date()" tooltiptext="Ingrese la Fecha de la Operacion" />
+					</row>
+					<row>
+						<hbox>
+							<label class="etiqueta" value="Empresa:" />
+							<space />
+							<label value="*" style="font-weight:bold;color:red">
+							</label>
+						</hbox>
+						<intbox disabled="true" id="txtEmpresa" value="0" width="100%"
+							tooltiptext="Seleccione del Catalogo el Codigo de la Empresa" />
+						<button id="btnBuscarEmpresa" label="Buscar"
+							tooltiptext="Catalogo de Codigos de Empresas" image="/public/imagenes/botones/buscar.png"
+							class="btn" autodisable="self" />
+						<label id="lblEmpresa" value="TODOS" />
+					</row>
+					<row>
+						<hbox>
+							<label class="etiqueta" value="Cliente:" />
+							<space />
+							<label value="*" style="font-weight:bold;color:red">
+							</label>
+						</hbox>
+						<intbox disabled="true" id="txtCliente" value="0" width="100%"
+							tooltiptext="Seleccione del Catalogo el Cliente" />
+						<button id="btnBuscarCliente" label="Buscar" tooltiptext="Catalogo de Clientes"
+							image="/public/imagenes/botones/buscar.png" class="btn"
+							autodisable="self" />
+						<label id="lblCliente" value="TODOS" />
+					</row>
+					<row>
+						<hbox>
+							<label class="etiqueta" value="Concepto:" />
+							<space />
+							<label value="*" style="font-weight:bold;color:red">
+							</label>
+						</hbox>
+						<intbox disabled="true" id="txtConcepto" value="0" width="100%"
+							tooltiptext="Seleccione del Catalogo el Concepto" />
+						<button id="btnBuscarConcepto" label="Buscar"
+							tooltiptext="Catalogo de Conceptos" image="/public/imagenes/botones/buscar.png"
+							class="btn" autodisable="self" />
+						<label id="lblConcepto" value="TODOS" />
+					</row>
+				</rows>
+			</grid>
+			<separator />
+			<div id="divCatalogoEmpresa" tooltiptext="Click para Seleccionar un Aliado" />
+			<div id="divCatalogoCliente" tooltiptext="Click para Seleccionar un Proveedor" />
+			<div id="divCatalogoConcepto" tooltiptext="Click para Seleccionar un Proveedor" />
+		</groupbox>
+	</div>
+</zk>

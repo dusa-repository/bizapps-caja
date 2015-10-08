@@ -38,23 +38,36 @@ public class Generador extends HttpServlet {
 
 		CRecibo recibos = new CRecibo();
 		CNota notas = new CNota();
+		CReporteRecibo recibosReporte = new CReporteRecibo();
+		CReporteNota notasReporte = new CReporteNota();
 		ServletOutputStream out;
 		String par1 = request.getParameter("valor");
 		String par2 = request.getParameter("valor2");
 		String par3 = request.getParameter("valor3");
 		String par4 = request.getParameter("valor4");
 		String par5 = request.getParameter("valor5");
+		String par6 = request.getParameter("valor6");
+		String par7 = request.getParameter("valor7");
+		String par8 = request.getParameter("valor8");
 		byte[] fichero = null;
-			switch (par1) {
-			case "1":
-				fichero = notas.mostrarReporte(par2, par3, par4, par5);
-				break;
-			case "2":
-				fichero = recibos.mostrarReporte(par2, par3, par4);
-				break;
-			default:
-				break;
-			}
+		switch (par1) {
+		case "1":
+			fichero = notas.mostrarReporte(par2, par3, par4, par5);
+			break;
+		case "2":
+			fichero = recibos.mostrarReporte(par2, par3, par4);
+			break;
+		case "3":
+			fichero = notasReporte.mostrarReporte(par2, par3, par4, par5, par6,
+					par7, par8);
+			break;
+		case "4":
+			fichero = recibosReporte.mostrarReporte(par2, par3, par4, par5,
+					par6);
+			break;
+		default:
+			break;
+		}
 		response.setContentType("application/pdf");
 		response.setHeader("Content-disposition",
 				"inline; filename=Reporte.pdf");

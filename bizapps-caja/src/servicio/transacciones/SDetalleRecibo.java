@@ -1,5 +1,6 @@
 package servicio.transacciones;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import interfacedao.transacciones.IDetalleReciboDAO;
@@ -30,5 +31,11 @@ public class SDetalleRecibo {
 
 	public void guardar(TabConceptos detalle) {
 		detalleReciboDAO.save(detalle);
+	}
+
+	public List<Object[]> buscarPorParametros(Timestamp desde, Timestamp hasta,
+			String empresa, String cliente, String concepto) {
+		return detalleReciboDAO.findByParameters(desde, hasta, empresa,
+				cliente, concepto);
 	}
 }

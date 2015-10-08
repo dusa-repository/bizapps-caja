@@ -1,0 +1,69 @@
+<zk>
+	<style src="../public/Estilo.css" />
+	<div id="divVReporteNota" apply="controlador.reporte.CReporteNota">
+		<groupbox id="grxCabecera" width="80%" mold="3d" title="">
+			<div id="botoneraReporteNota" />
+			<separator />
+			<grid width="100%">
+				<columns>
+					<column label="" width="25%" />
+					<column label="" width="25%" />
+					<column label="" width="25%" />
+					<column label="" width="25%" />
+				</columns>
+				<rows>
+					<row>
+						<label class="etiqueta" value="Desde:" />
+						<datebox readonly="true" width="100%" id="dtbDesde"
+							onCreate="self.value = new Date()" tooltiptext="Ingrese la Fecha de la Operacion" />
+						<label class="etiqueta" value="Hasta:" />
+						<datebox readonly="true" width="100%" id="dtbHasta"
+							onCreate="self.value = new Date()" tooltiptext="Ingrese la Fecha de la Operacion" />
+					</row>
+					<row>
+						<hbox>
+							<label class="etiqueta" value="Proveedor:" />
+							<space />
+							<label value="*" style="font-weight:bold;color:red">
+							</label>
+						</hbox>
+						<intbox disabled="true" id="txtProveedor" width="100%"
+							value="0" tooltiptext="Seleccione del Catalogo el Proveedor" />
+						<button id="btnBuscarProveedor" label="Buscar"
+							tooltiptext="Catalogo de Proveedores" image="/public/imagenes/botones/buscar.png"
+							class="btn" autodisable="self" />
+						<label id="lblProveedor" value="TODOS" />
+					</row>
+					<row>
+						<cell colspan="4">
+							<div id="divBuscadorClase" />
+						</cell>
+					</row>
+					<row>
+						<cell colspan="4">
+							<div id="divBuscadorTipo" />
+						</cell>
+					</row>
+					<row>
+						<hbox>
+							<label class="etiqueta" value="Usuario:" />
+							<space />
+							<label value="*" style="font-weight:bold;color:red">
+							</label>
+						</hbox>
+						<textbox disabled="true" id="txtUsuario" value="0"
+							tooltiptext="Seleccione del Catalogo el Usuario" />
+						<button id="btnBuscarUsuario" label="Buscar"
+							tooltiptext="Catalogo de Codigos de Usuarios" image="/public/imagenes/botones/buscar.png"
+							class="btn" autodisable="self" />
+						<label id="lblUsuario" value="TODOS" />
+					</row>
+				</rows>
+			</grid>
+			<separator />
+			<div id="divCatalogoEmpresa" tooltiptext="Click para Seleccionar un Aliado" />
+			<div id="divCatalogoUsuario" tooltiptext="Click para Seleccionar un Aliado" />
+			<div id="divCatalogoProveedor" tooltiptext="Click para Seleccionar un Proveedor" />
+		</groupbox>
+	</div>
+</zk>

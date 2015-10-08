@@ -1,5 +1,6 @@
 package servicio.transacciones;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import interfacedao.transacciones.IDetalleNotaDAO;
@@ -32,5 +33,12 @@ public class SDetalleNota {
 		return detalleNOTA.findByIdIDNotAndIdtipNotAndIdcatNotAndIdIDEmp(
 				clave.getIDNot(), clave.getTipNot(), clave.getCatNot(),
 				clave.getIDEmp());
+	}
+
+	public List<Object[]> findByParameters(Timestamp desde, Timestamp hasta,
+			String empresa, String proveedor, String usuario, String clase,
+			String tipo) {
+		return detalleNOTA.findByParameters(desde, hasta, empresa, proveedor,
+				usuario, clase, tipo);
 	}
 }
